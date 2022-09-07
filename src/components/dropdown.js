@@ -1,9 +1,9 @@
 import React from "react";
-import imgs from '../imgs/imgs'
+import chars from '../imgs/characters'
 function Dropdown() {
   return (
     <div className="dropdown" id="dropdown">
-      {imgs.map((char) => {
+      {chars.map((char) => {
         return (
       
             <li onClick={() => {

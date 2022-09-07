@@ -1,10 +1,15 @@
-function getClickLocation(event) {
-  let xCord = event.offsetX;
-  let yCord = event.offsetY;
+function getClickLocation(e) {
+  const imgWidth = e.target.width;
+  const imgHeight = e.target.height;
+  const xCoord = e.offsetX;
+  const yCoord = e.offsetY;
 
-  let xPercent = Math.round((xCord / window.innerWidth) * 10);
-  let yPercent = Math.round((yCord / window.innerHeight) * 10);
-  console.log(xPercent, yPercent);
+  const xPercent = Math.floor((xCoord * 100) / imgWidth);
+
+  const yPercent = Math.floor((yCoord * 100) / imgHeight);
+
+
+  console.log(xPercent, yPercent)
   return { xPercent, yPercent };
 }
 

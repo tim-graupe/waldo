@@ -9,6 +9,7 @@ function Nav() {
       <img src={marcus} className="icons" alt="marcus" id="marcus" />
       <img src={zoey} className="icons" alt="zoey" id="zoey" />
       <img src={chief} className="icons" alt="chief" id="chief" />
+      <div id="timer"></div>
     </div>
   );
 }

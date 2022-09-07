@@ -6,31 +6,22 @@ import displayBox from "../utilities/displayBox";
 import bg from '../imgs/pierre-roussel-xbox360s-phone2.jpg'
 
 function Xbox() {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  const [zoey, setZoey] = useState(false);
-  const [marcus, setMarcus] = useState(false);
-  const [mc, setMC] = useState(false);
-
-  const zoeyLocation = { x: 5, y: 27 };
-  const marcusLocation = { x: 6, y: 18 };
-  const mcLocation = { x: 7, y: 23 };
-
   useEffect(() => {
 
     const checkCoords = (event) => {
       getClickLocation(event);
-      displayBox(event);
+    //   displayBox(event);
     };
     document.addEventListener("click", checkCoords);
     return () => {
       document.removeEventListener("click", checkCoords);
     };
-  }, [zoey, marcus, mc]);
+  });
 
   return (
     <div className="Xbox" id="Xbox">
          <Nav />
-        {/* <img src = {bg} alt="bg" className="bg"/> */}
+        <img src = {bg} alt="bg" className="bg" id="bg" />
      
       <Dropdown />
     </div>
