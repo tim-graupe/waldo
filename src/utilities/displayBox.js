@@ -6,7 +6,7 @@ function showCharBox(e) {
   xbox.addEventListener("click", function (e) {
     e.preventDefault();
   });
-
+  
   let x = e.clientX - rect.left;
   let y = e.clientY - rect.top;
   menu.style.top = `${y}px`;

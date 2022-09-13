@@ -4,13 +4,15 @@ import Dropdown from "./dropdown";
 import getClickLocation from "../utilities/getClickLocation";
 import displayBox from "../utilities/displayBox";
 import bg from '../imgs/pierre-roussel-xbox360s-phone2.jpg'
+import VerifyCoords from "../utilities/verifyCoords";
 
 function Xbox() {
   useEffect(() => {
-
     const checkCoords = (event) => {
       getClickLocation(event);
-    //   displayBox(event);
+      displayBox(event);
+    
+      
     };
     document.addEventListener("click", checkCoords);
     return () => {
@@ -22,7 +24,7 @@ function Xbox() {
     <div className="Xbox" id="Xbox">
          <Nav />
         <img src = {bg} alt="bg" className="bg" id="bg" />
-     
+      
       <Dropdown />
     </div>
   );

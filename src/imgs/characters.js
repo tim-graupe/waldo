@@ -7,7 +7,7 @@ const mcObj = {
   img: chief,
   alt: "master-chief",
   found: false,
-  coords: { x: 74, y: 70 },
+  coords: { x: 74, y: 59 },
 };
 const marcusObj = {
   id: "Marcus",
@@ -21,9 +21,9 @@ const zoeyObj = {
   img: zoey,
   alt: "zoey",
   found: false,
-  coords: { x: 50, y: 68 },
+  coords: { x: 50, y: 67 },
 };
 
-const imgs = [mcObj, zoeyObj, marcusObj];
+const chars = [mcObj, zoeyObj, marcusObj];
 
-export default imgs;
+export default chars;

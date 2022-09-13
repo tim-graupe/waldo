@@ -1,5 +1,7 @@
 import React from "react";
 import chars from '../imgs/characters'
+import GetClickLocation from "../utilities/getClickLocation";
+import VerifyCoords from "../utilities/verifyCoords";
 function Dropdown() {
   return (
     <div className="dropdown" id="dropdown">
@@ -8,6 +10,9 @@ function Dropdown() {
       
             <li onClick={() => {
               
+              <VerifyCoords xPercent = {char.coords.x}
+              yPercent = {char.coords.y} />
+
             }}>
               <img
                 className="dropdown-icons"
