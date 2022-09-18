@@ -1,4 +1,4 @@
-function showCharBox(e) {
+function displayBox(e) {
   const xbox = document.getElementById("Xbox");
   let rect = xbox.getBoundingClientRect();
   const menu = document.getElementById("dropdown");
@@ -15,4 +15,4 @@ function showCharBox(e) {
   menu.style.position = "absolute";
 }
 
-export default showCharBox;
+export default displayBox;

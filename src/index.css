@@ -7,11 +7,11 @@ code {
   font-family: 'Silkscreen', cursive;
 }
 
-body{
+body {
   margin: 0;
 }
 
-.bg{
+.bg {
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -19,7 +19,7 @@ body{
 }
 
 .Xbox {
-
+position: sticky;
 }
 
 .App {
@@ -29,10 +29,11 @@ body{
 }
 
 .nav {
-  background-color: #a2bba4;
+  background-color: #155c1b;
   height: 80px;
+  overflow: hidden;
   position: sticky;
-  top: 0;
+  top: 20;
   display: flex;
   justify-content: center;
 }
@@ -43,6 +44,10 @@ body{
   margin: 0 50px;
 
 
+}
+
+.found-icons{
+  opacity: 50%;
 }
 
 .dropdown {
@@ -91,12 +96,12 @@ li:hover {
     max-height: 100%;
   }
 
-  .icons{
+  .icons {
     float: none;
-max-width: 33%;
+    max-width: 33%;
   }
 
-  .dropdown{
+  .dropdown {
     width: 42%;
   }
 }
