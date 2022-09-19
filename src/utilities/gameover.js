@@ -1,7 +1,7 @@
 import chars from "../imgs/characters"
 
-function gameOver(item){
-chars.every(char => {
-    char.found = true
-})
+export default function gameOver(){
+    
+    console.log(chars.every(char => char.found === true))
+
 }

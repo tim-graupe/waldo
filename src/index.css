@@ -18,22 +18,17 @@ body {
   width: 100%;
 }
 
-.Xbox {
-position: sticky;
-}
 
 .App {
   width: 100%;
-  height: 100%;
 
 }
 
 .nav {
   background-color: #155c1b;
   height: 80px;
-  overflow: hidden;
-  position: sticky;
-  top: 20;
+ position: sticky;
+
   display: flex;
   justify-content: center;
 }

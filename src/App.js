@@ -6,8 +6,10 @@ import Nav from "./components/nav";
 function App() {
 
   return (
+  
     <div className="App" id="App">
-      <Nav />
+              <Nav/>
+
       <Xbox />
     </div>
   );
