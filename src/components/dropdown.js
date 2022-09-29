@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { verifyCoords } from "../firebase";
 import chars from "../imgs/characters";
 import gameOver from "../utilities/gameover";
-import verifyCoords from "../utilities/verifyCoords";
 
 function Dropdown({ coords }) {
+
+
+
   return (
     <div className="dropdown" id="dropdown">
       {chars.map((char) => {
         return (
-          <li
+          <li key={char.id}
             onClick={() => {
-              if (verifyCoords({ coords }, char.coords)) {
-         char.found = true
-/         gameOver()
-        //  console.log(chars.some(char => char.found === true))
+              if (verifyCoords({coords})) {
+                char.found = true;
+                console.log(chars)
               } else {
-                console.log("false");
+                // console.log(chars);
               }
+              gameOver();
             }}
           >
             <img

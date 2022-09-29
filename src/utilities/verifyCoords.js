@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import chars from "../imgs/characters";
-import getClickLocation from "./getClickLocation";
-import Xbox from "../components/xbox360";
+import {marcus} from '../firebase' 
 
-function verifyCoords({ coords }, coord) {
+//sets up parameters to check firebase coordinates for a match
+async function verifyCoords({ coords }, coord) {
+
   let x = coords.x;
   let y = coords.y;
   if (x === coord.x && y === coord.y) {
