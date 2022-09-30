@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
-import {marcus} from '../firebase' 
+// import { useState, useEffect } from "react";
 
-//sets up parameters to check firebase coordinates for a match
-async function verifyCoords({ coords }, coord) {
+// //sets up parameters to check firebase coordinates for a match
+// async function verifyCoords({ coords }, coord) {
 
-  let x = coords.x;
-  let y = coords.y;
-  if (x === coord.x && y === coord.y) {
-    return true;
-  }
-}
+//   let x = coords.x;
+//   let y = coords.y;
+//   if (x === coord.x && y === coord.y) {
+//     return true;
+//   }
+// }
 
-export default verifyCoords;
+// export default verifyCoords;

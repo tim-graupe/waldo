@@ -1,25 +1,23 @@
+import { result } from "lodash";
 import React from "react";
 import { verifyCoords } from "../firebase";
 import chars from "../imgs/characters";
 import gameOver from "../utilities/gameover";
 
 function Dropdown({ coords }) {
-
-
-
   return (
     <div className="dropdown" id="dropdown">
       {chars.map((char) => {
         return (
-          <li key={char.id}
+          <li
+            key={char.id}
             onClick={() => {
-              if (verifyCoords({coords})) {
-                char.found = true;
-                console.log(chars)
-              } else {
-                // console.log(chars);
-              }
-              gameOver();
+              verifyCoords({ coords }).then((result) => {
+                if (result === true) {
+                  char.found = true;
+                  gameOver();
+                }
+              });
             }}
           >
             <img

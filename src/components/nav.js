@@ -10,6 +10,16 @@ function Nav() {
       <img src={zoey} className="icons" alt="zoey" id="zoey" />
       <img src={chief} className="icons" alt="chief" id="chief" />
       <button id="menu" className="menu" onClick={() => {showMenu()}}>Menu</button>
+      <table id="scoreboard" className="scoreboard">
+        <thead id="thead">
+        <tr>
+          <th>Name</th>
+          <th>Time</th>
+          <th>Date</th>
+        </tr>
+        </thead>
+        <tbody className="tbody" id="tbody"></tbody>
+      </table>
     </div>
   );
 }
