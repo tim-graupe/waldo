@@ -116,10 +116,18 @@ td, tr, th{
 
   .icons {
     float: none;
-    max-width: 33%;
+    max-width: 10%;
   }
 
   .dropdown {
-    width: 42%;
+    width: auto;
+    max-width: 30%
+  
+  }
+
+  li {
+    width: auto;
+    max-width: 50%;
+
   }
 }
