@@ -11,11 +11,16 @@ function Dropdown({ coords }) {
         return (
           <li
             key={char.id}
+            id={char.id}
             onClick={() => {
+              document.getElementById('dropdown').style.display = 'none';
               verifyCoords({ coords }).then((result) => {
-                if (result === true) {
+                if (result === char.alt) {
                   char.found = true;
+                  document.getElementById(`${char.id}`).style.display = 'none'
                   gameOver();
+                } else {
+                  console.log(result, char.alt)
                 }
               });
             }}

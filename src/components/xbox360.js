@@ -11,6 +11,7 @@ function Xbox(props) {
 
   useEffect(() => {
     const getClickLocation = (e) => {
+      
       const imgWidth = e.target.width;
       const imgHeight = e.target.height;
       const xCoord = e.offsetX;
@@ -20,6 +21,7 @@ function Xbox(props) {
 
       const yPercent = Math.floor((yCoord * 100) / imgHeight);
       displayBox(e);
+
       setClickCoords({ x: xPercent, y: yPercent });
     };
     document.addEventListener("click", getClickLocation);

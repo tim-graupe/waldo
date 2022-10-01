@@ -83,12 +83,14 @@ li:hover {
   background-color: white;
   border: solid rgb(47, 231, 47) 3px;
   border-collapse: collapse;
+  display: none;
 }
 
 
 td, tr, th{
   border: 1px solid;
 }
+
 
 .dropdown-icons {
   max-width: 50%;

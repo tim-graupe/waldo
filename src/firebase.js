@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import { initializeApp } from "firebase/app";
 import "firebase/compat/firestore";
+import { getDatabase, ref, equalTo } from "firebase/database";
 import {
   getFirestore,
   doc,
@@ -31,23 +32,22 @@ const firebaseConfig = {
 
   appId: "1:662044481458:web:16b6201d065a4a3791f6ab",
 };
-let time = 0;
 const app = firebase.initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const docRef = doc(db, "xbox360", "locations");
 
-//checks firebase to verify click location
+//checks firebase to verify click location and returns character name if it is a match
 export async function verifyCoords(coord) {
-  let found = false;
+  let result = "";
   const docSnap = await getDoc(docRef);
 
   let data = docSnap.data();
-  for (let i of Object.values(data)) {
-    if (i.x === coord.coords.x && i.y === coord.coords.y) {
-      found = true;
+  for (let [key, value] of Object.entries(data)) {
+    if (value.x === coord.coords.x && value.y === coord.coords.y) {
+      result = key;
     }
   }
-  return found;
+  return result;
 }
 //adds score from firebase once all characters are successfully found
 export async function addScore(Name, Time) {
