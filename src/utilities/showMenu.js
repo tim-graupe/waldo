@@ -1,5 +1,5 @@
 import { getHighScore } from "../firebase";
 
-export default function showMenu(){
-    getHighScore()
+export default function showMenu() {
+  getHighScore();
 }

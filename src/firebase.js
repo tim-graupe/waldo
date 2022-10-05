@@ -4,17 +4,13 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import { initializeApp } from "firebase/app";
 import "firebase/compat/firestore";
-import { getDatabase, ref, equalTo } from "firebase/database";
+
 import {
   getFirestore,
   doc,
   getDoc,
-  DocumentSnapshot,
-  query,
   collection,
   getDocs,
-  where,
-  setDoc,
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
@@ -40,10 +36,20 @@ const docRef = doc(db, "xbox360", "locations");
 export async function verifyCoords(coord) {
   let result = "";
   const docSnap = await getDoc(docRef);
-
   let data = docSnap.data();
+  let coordVar = coord.coords;
   for (let [key, value] of Object.entries(data)) {
-    if (value.x === coord.coords.x && value.y === coord.coords.y) {
+    if (
+      (value.x === coordVar.x && value.y === coordVar.y) ||
+      (value.x === coordVar.x + 1 && value.y === coordVar.y) ||
+      (value.x === coordVar.x + 2 && value.y === coordVar.y) ||
+      (value.x === coordVar.x - 1 && value.y === coordVar.y) ||
+      (value.x === coordVar.x - 2 && value.y === coordVar.y) ||
+      (value.x === coordVar.x && value.y === coordVar.y + 1) ||
+      (value.x === coordVar.x && value.y === coordVar.y + 2) ||
+      (value.x === coordVar.x && value.y === coordVar.y - 1) ||
+      (value.x === coordVar.x && value.y === coordVar.y - 2)
+    ) {
       result = key;
     }
   }

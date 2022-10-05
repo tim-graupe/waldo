@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import chars from "../imgs/characters";
-import VerifyCoords from "./verifyCoords";
+import { useState } from "react";
+
 const GetClickLocation = (e) => {
   const [coords, setCoords] = useState({ x: 57, y: 51 });
 
@@ -12,7 +11,7 @@ const GetClickLocation = (e) => {
   const xPercent = Math.floor((xCoord * 100) / imgWidth);
 
   const yPercent = Math.floor((yCoord * 100) / imgHeight);
-  // setCoords({x: xPercent, y: yPercent})
+  setCoords({ x: xPercent, y: yPercent });
   return <div>{coords}</div>;
 };
 

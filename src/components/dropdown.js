@@ -1,10 +1,10 @@
-import { result } from "lodash";
 import React from "react";
 import { verifyCoords } from "../firebase";
-import chars from "../imgs/characters";
 import gameOver from "../utilities/gameover";
 
-function Dropdown({ coords }) {
+export default function Dropdown(props) {
+  const { chars, coords } = props;
+
   return (
     <div className="dropdown" id="dropdown">
       {chars.map((char) => {
@@ -13,14 +13,14 @@ function Dropdown({ coords }) {
             key={char.id}
             id={char.id}
             onClick={() => {
-              document.getElementById('dropdown').style.display = 'none';
+              document.getElementById("dropdown").style.display = "none";
               verifyCoords({ coords }).then((result) => {
                 if (result === char.alt) {
                   char.found = true;
-                  document.getElementById(`${char.id}`).style.display = 'none'
+                  document.getElementById(`${char.id}`).style.display = "none";
                   gameOver();
                 } else {
-                  console.log(result, char.alt)
+                  console.log(result, char.alt);
                 }
               });
             }}
@@ -40,4 +40,3 @@ function Dropdown({ coords }) {
 }
 
 //remember: npm start to host, npm run build => firebase deploy to host
-export default Dropdown;
