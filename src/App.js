@@ -15,7 +15,7 @@ function App() {
     <Route path="Xbox" element={<Xbox />} />
     <Route path="N64" element={<N64 />} />
     <Route path="Wii" element={<Wii />} />
-    <Route path="PCMR" element={<Pcmr />} />
+    {/* <Route path="PCMR" element={<Pcmr />} /> */}
 
     </Routes>
     </BrowserRouter>

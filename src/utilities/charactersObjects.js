@@ -14,7 +14,6 @@ import pudge from "../imgs/characters/pudge.png";
 import steve from "../imgs/characters/steve.png";
 import amogus from "../imgs/characters/amogus.png";
 
-
 //xbox360 chars
 const mcObj = {
   id: "Chief",
@@ -107,7 +106,6 @@ const amogusObj = {
   found: false,
 };
 //end pcmr chars
-
 
 export const xbox360chars = [mcObj, zoeyObj, marcusObj];
 export const n64Chars = [linkObj, conkerObj, kazooieObj];
