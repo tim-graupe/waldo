@@ -5,15 +5,14 @@ import bg from "../imgs/backgrounds/pierre-roussel-xbox360s-phone2.jpg";
 import { xbox360chars } from "../utilities/charactersObjects.js";
 import Renderer from "./renderer";
 
-function Xbox(props) {
+function Xbox() {
   const [chars] = useState(xbox360chars);
-
   return (
     <div>
+      {/* <Dropdown chars={chars} /> */}
       <Nav chars={chars} />
-      <Dropdown chars={chars} />
+      <Renderer bg={bg} chars={chars}/>
 
-      <Renderer bg={bg} />
     </div>
   );
 }

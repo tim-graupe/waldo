@@ -30,25 +30,34 @@ const firebaseConfig = {
 };
 const app = firebase.initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const docRef = doc(db, "xbox360", "locations");
 
 //checks firebase to verify click location and returns character name if it is a match
+
+//next: maybe add a parameter to switch the xbox360 on line 38 with the selected gaming console.
 export async function verifyCoords(coord) {
+  const docRef = doc(db, "xbox360", "locations");
+
   let result = "";
   const docSnap = await getDoc(docRef);
   let data = docSnap.data();
-  let coordVar = coord.coords;
   for (let [key, value] of Object.entries(data)) {
     if (
-      (value.x === coordVar.x && value.y === coordVar.y) ||
-      (value.x === coordVar.x + 1 && value.y === coordVar.y) ||
-      (value.x === coordVar.x + 2 && value.y === coordVar.y) ||
-      (value.x === coordVar.x - 1 && value.y === coordVar.y) ||
-      (value.x === coordVar.x - 2 && value.y === coordVar.y) ||
-      (value.x === coordVar.x && value.y === coordVar.y + 1) ||
-      (value.x === coordVar.x && value.y === coordVar.y + 2) ||
-      (value.x === coordVar.x && value.y === coordVar.y - 1) ||
-      (value.x === coordVar.x && value.y === coordVar.y - 2)
+      (value.x === coord.clickCoords.x && value.y === coord.clickCoords.y) ||
+      (value.x === coord.clickCoords.x + 1 &&
+        value.y === coord.clickCoords.y) ||
+      (value.x === coord.clickCoords.x + 2 &&
+        value.y === coord.clickCoords.y) ||
+      (value.x === coord.clickCoords.x - 1 &&
+        value.y === coord.clickCoords.y) ||
+      (value.x === coord.clickCoords.x - 2 &&
+        value.y === coord.clickCoords.y) ||
+      (value.x === coord.clickCoords.x &&
+        value.y === coord.clickCoords.y + 1) ||
+      (value.x === coord.clickCoords.x &&
+        value.y === coord.clickCoords.y + 2) ||
+      (value.x === coord.clickCoords.x &&
+        value.y === coord.clickCoords.y - 1) ||
+      (value.x === coord.clickCoords.x && value.y === coord.clickCoords.y - 2)
     ) {
       result = key;
     }

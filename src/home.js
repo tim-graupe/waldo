@@ -1,4 +1,3 @@
-import { Component } from "react";
 import { wiiChars } from "./utilities/charactersObjects";
 import { xbox360chars } from "./utilities/charactersObjects";
 import { n64Chars } from "./utilities/charactersObjects";
@@ -16,9 +15,8 @@ export default function Homepage() {
       <div className="home-header">
         <h1>The Odin Project: Where's Waldo? &#129300;</h1>
         <h4>Gamer Edition</h4>
-        </div>
-        <div className="home-main">
-            
+      </div>
+      <div className="home-main">
         <HomepageCard
           bg={n64BG}
           className="card"
@@ -45,7 +43,7 @@ export default function Homepage() {
           title="pcmr"
           chars={pcmrChars}
         /> */}
-        </div>
+      </div>
     </>
   );
 }

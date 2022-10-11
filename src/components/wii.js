@@ -7,13 +7,11 @@ import Renderer from "./renderer";
 
 function Wii() {
   const [chars] = useState(wiiChars);
-
+  const theme = document.getElementsByClassName('.wii-nav')
   return (
     <div>
+      <Renderer bg={bg} chars={chars}/>
       <Nav chars={chars} />
-      <Dropdown chars={chars} />
-
-      <Renderer bg={bg} />
     </div>
   );
 }

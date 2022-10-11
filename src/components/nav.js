@@ -4,7 +4,10 @@ export default function Nav(props) {
   const { chars } = props;
 
   function showMenu() {
+
     const nav = document.querySelector(".nav-menu-content");
+    console.log(props)
+
     nav.style.display === "block"
       ? (nav.style.display = "none")
       : (nav.style.display = "block");

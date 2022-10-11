@@ -12,10 +12,8 @@ function N64(props) {
 
   return (
     <div>
+      <Renderer bg={bg} chars={chars}/>
       <Nav chars={chars} />
-      <Dropdown chars={chars} />
-
-      <Renderer bg={bg} />
     </div>
   );
 }
