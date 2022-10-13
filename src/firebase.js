@@ -32,8 +32,6 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //checks firebase to verify click location and returns character name if it is a match
-
-//next: maybe add a parameter to switch the xbox360 on line 38 with the selected gaming console.
 export async function verifyCoords(coord) {
   const docRef = doc(db, "xbox360", "locations");
 
@@ -65,20 +63,22 @@ export async function verifyCoords(coord) {
   return result;
 }
 //adds score from firebase once all characters are successfully found
-export async function addScore(Name, Time) {
-  const docRef = await addDoc(collection(db, "highscores"), {
+export async function addScore(Name, Time, Level) {
+  //props are set up for N64 as an example. rewrite this code so it can filter based on Level
+  const docRef = await addDoc(collection(db, Level), {
     Date: serverTimestamp(),
     Name: Name,
     Time: `${Time} seconds`,
+    Level: Level
   });
-  getHighScore();
+  getHighScore(Level);
 }
 
 //fetches scores from firebase and displays in order from shortest time.
-export async function getHighScore() {
+export async function getHighScore(props) {
   const table = document.getElementById("tbody");
   let sb = document.getElementById("scoreboard");
-  table.innerHTML = "";
+  table.textContent = "";
   if (sb.style.display === "none") {
     sb.style.display = "table";
   } else {
@@ -86,7 +86,7 @@ export async function getHighScore() {
   }
   let tableArr = [];
 
-  const querySnapshot = await getDocs(collection(db, "highscores"));
+  const querySnapshot = await getDocs(collection(db, props));
   querySnapshot.forEach((doc) => {
     tableArr.push(doc.data());
   });

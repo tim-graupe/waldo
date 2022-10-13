@@ -6,7 +6,8 @@ import gameOver from "../utilities/gameover";
 
 export default function Renderer(props) {
   let [clickCoords, setClickCoords] = useState({ x: 0, y: 0 });
-  const { chars } = props;
+  const { chars, level } = props;
+  const bg = document.getElementById('bg')
 
   useEffect(() => {
     const getClickLocation = (e) => {
@@ -29,7 +30,7 @@ export default function Renderer(props) {
 
   return (
     <div>
-
+        {/* renders background */}
       <img
         width="100%"
         src={props.bg}
@@ -39,6 +40,8 @@ export default function Renderer(props) {
         onClick={() => getClickLocation}
       />
 
+
+{/* renders character list background image is clicked */}
 <div className="dropdown" id="dropdown">
         {chars.map((char) => {
           return (
@@ -47,15 +50,14 @@ export default function Renderer(props) {
               id={char.id}
               onClick={() => {
                 document.getElementById("dropdown").style.display = "none";
-                verifyCoords({ clickCoords }).then((result) => {
+                //add props as an argument??? {clickcoords}, props.level 
+                verifyCoords({ clickCoords }, props.level).then((result) => {
                   if (result === char.alt) {
                     char.found = true;
                     document.getElementById(`${char.id}`).style.display =
                       "none";
-                    gameOver(chars);
-                  } else {
-                    // console.log(result, char.alt);
-                  }
+                    gameOver(chars, props.level);
+                  } 
                 });
               }}
             >

@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import Nav from "./nav";
-import Dropdown from "./dropdown";
-import bg from "../imgs/backgrounds/pierre-roussel-n64phone.jpg";
+import bg from "../imgs/backgrounds/n64.jpg";
 import Renderer from "./renderer";
-import {n64Chars} from "../utilities/charactersObjects.js";
-//conker: x 39 y: 56
-//kazooie: x84 y: 56
-//link: x 30 y: 44
-function N64(props) {
-  const [chars, setChars] = useState(n64Chars)
+import { n64Chars } from "../utilities/charactersObjects.js";
+
+function N64() {
+  const [chars] = useState(n64Chars);
+
 
   return (
     <div>
-      <Renderer bg={bg} chars={chars}/>
-      <Nav chars={chars} />
+      <Renderer bg={bg} chars={chars} level="N64" />
+      <Nav chars={chars} level="N64" />
     </div>
   );
 }
 
-//remember: npm start to host, npm run build => firebase deploy to host
 export default N64;

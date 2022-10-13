@@ -4,7 +4,7 @@ import { n64Chars } from "./utilities/charactersObjects";
 import { pcmrChars } from "./utilities/charactersObjects";
 import HomepageCard from "./components/homepageDisplay";
 
-import n64BG from "./imgs/backgrounds/pierre-roussel-n64phone.jpg";
+import n64BG from "./imgs/backgrounds/n64.jpg";
 import xb360BG from "./imgs/backgrounds/pierre-roussel-xbox360s-phone2.jpg";
 import wiiBG from "./imgs/backgrounds/pierre-roussel-wii-phone2.jpg";
 import pcmrBG from "./imgs/backgrounds/pierre-roussel-laptop-deksmat1.jpg";
