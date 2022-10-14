@@ -5,8 +5,8 @@ import { pcmrChars } from "./utilities/charactersObjects";
 import HomepageCard from "./components/homepageDisplay";
 
 import n64BG from "./imgs/backgrounds/n64.jpg";
-import xb360BG from "./imgs/backgrounds/pierre-roussel-xbox360s-phone2.jpg";
-import wiiBG from "./imgs/backgrounds/pierre-roussel-wii-phone2.jpg";
+import xb360BG from "./imgs/backgrounds/xbox360.jpg";
+import wiiBG from "./imgs/backgrounds/wii.jpg";
 import pcmrBG from "./imgs/backgrounds/pierre-roussel-laptop-deksmat1.jpg";
 
 export default function Homepage() {
@@ -33,7 +33,7 @@ export default function Homepage() {
         <HomepageCard
           bg={xb360BG}
           className="card"
-          title="xbox360"
+          title="xbox"
           chars={xbox360chars}
         />
 

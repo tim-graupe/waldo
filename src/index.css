@@ -193,20 +193,16 @@ th {
 @media only screen and (max-width: 1000px) {
 
 
-
   .nav {
+
     max-width: 100%;
-    max-height: 100%;
-    position: sticky;
-    width: 100%;
   }
 
 
 
-
-  .icons {
-    float: none;
-    max-width: 100%;
+  .nav-menu{
+    /* position: fixed; */
+    float: left;
   }
 
   .dropdown {
@@ -219,7 +215,10 @@ th {
   }
 
   .icons {
-    width: 100%;
+    float: left;
+    min-width: 10%;
+    padding: 0;
+    margin: 0;
   }
 
   li {
@@ -232,4 +231,8 @@ th {
     color: black;
     width: 500%;
   }
+
+  /* .card > img{
+    height: 25%;
+  } */
 }

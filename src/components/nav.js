@@ -29,7 +29,7 @@ export default function Nav(props) {
           <a href="/">HOME</a>
           <a href="/XBOX">XBOX 360</a>
           <a href="/N64">N64</a>
-          <a href="/PCMR">PCMR</a>
+          {/* <a href="/PCMR">PCMR</a> */}
           <a href="/WII">WII</a>
           <div id="hs" onClick={() => getHighScore(props.level)}>High Scores</div>
         </div>

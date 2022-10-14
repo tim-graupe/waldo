@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Nav from "./nav";
-import bg from "../imgs/backgrounds/pierre-roussel-wii-phone2.jpg";
+import bg from "../imgs/backgrounds/wii.jpg";
 import { wiiChars } from "../utilities/charactersObjects.js";
 import Renderer from "./renderer";
 

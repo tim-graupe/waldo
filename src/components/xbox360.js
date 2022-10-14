@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Nav from "./nav";
-import bg from "../imgs/backgrounds/pierre-roussel-xbox360s-phone2.jpg";
+import bg from "../imgs/backgrounds/xbox360.jpg";
 import { xbox360chars } from "../utilities/charactersObjects.js";
 import Renderer from "./renderer";
 
